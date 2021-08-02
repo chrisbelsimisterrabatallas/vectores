@@ -74,8 +74,33 @@ double minimo_vector (int* vector, int num)
 }
 
 //3)Función que devuelve por referencia el elemento mínimo y máximo del vector.
+double referencia_min_max (int* vector, int num) {
+    int max, nmax, min, nmin, n, vec[100];
+    for (int i = 0; i < n; i++) {
+        if (i==0) {
+            max=vec[i];
+            min=vec[i];
+        }
 
+        else if (vec[i]>max){
+            max=vec[i];
+            nmax=0;
+        }
 
+        else if (vec[i]==max){
+            nmax=nmax+1;
+        }
+
+        else  if (vec[i]<min){
+            min=vec[i];
+            nmin=0;
+        }
+
+        else if (vec[i]==min){
+            nmin=nmin+1;
+        }
+    }
+}
 
 //4)Función que llene el vector con valores aleatorios
 
@@ -114,6 +139,10 @@ int main() {
     cout<<endl<<"EL MINIMO DE LOS VECTOR ES: "<<minimo;
 
     aletorios_vectores(num, MAX);
+
+    int max, nmax, min, nmin;
+    cout<<endl<<"O maximo es: "  << max <<  " y aparece " << nmax <<  " veces.";
+    cout<<endl<<"O maximo es: "  << min <<  " y aparece " << nmin <<  " veces.";
 
     return 0;
 }
